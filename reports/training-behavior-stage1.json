@@ -1,0 +1,59 @@
+{
+  "completed_utc": "2026-11-06T15:28:35.529135+00:00",
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "apache-2.0",
+    "model_card": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "resolved_date": "2026-11-06",
+    "local_directory": "models/base/Qwen--Qwen2.5-0.5B-Instruct"
+  },
+  "device": "cpu",
+  "torch_version": "2.6.0+cpu",
+  "seed": 42,
+  "epochs": 3,
+  "optimizer_steps": 18,
+  "learning_rate": 0.0002,
+  "micro_batch_size": 1,
+  "gradient_accumulation": 4,
+  "max_length": 512,
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "trainable_parameters": 540672,
+  "total_parameters_including_adapter": 494573440,
+  "train_examples": 24,
+  "validation_examples": 2,
+  "training_data_file": "data/behavior_train.jsonl",
+  "validation_data_file": "data/behavior_validation.jsonl",
+  "training_data_sha256": "b962f42b1049d73a8cb7c833a24b75caf434f09b41e5cdfa473f2114b4a56cff",
+  "validation_data_sha256": "ad48d1c2a0142563c538658c11ae94c752f589b839236a9a224fbc3f701e176e",
+  "parent_adapter_sha256": "2c8a10299dd76c797e3521ff361e9df5ade0b672bac43b921626480eaca99ecb",
+  "validation_loss_before": 2.1095939095564713,
+  "validation_loss_after": 1.7529111856550683,
+  "elapsed_seconds": 307.16,
+  "epochs_log": [
+    {
+      "epoch": 1,
+      "mean_example_training_loss": 2.6370417972405753,
+      "validation_token_loss": 1.8981624832303505
+    },
+    {
+      "epoch": 2,
+      "mean_example_training_loss": 2.3663119773070016,
+      "validation_token_loss": 1.8100124250246783
+    },
+    {
+      "epoch": 3,
+      "mean_example_training_loss": 2.1434045980374017,
+      "validation_token_loss": 1.7529111856550683
+    }
+  ],
+  "interpretation": "Small feasibility experiment. Loss does not establish historical accuracy, persona quality, or improvement in chatbot answers."
+}

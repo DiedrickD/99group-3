@@ -1,5 +1,10 @@
 # Original project data
 
+The same attribution terms below also apply to the original behavior-case
+annotations, hypothetical training answers, router questions and profile text
+in the `behavior_*`, `extended_*`, `router_train.jsonl` and `persona*` files.
+Hypothetical answers are authored interpretations, not historical source text.
+
 The original research notes and authored QA text in `data/notes.jsonl`,
 `data/train.jsonl` and `data/validation.jsonl`, and the original diagnostic
 questions in `data/eval.jsonl`, are made available under

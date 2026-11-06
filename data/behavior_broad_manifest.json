@@ -1,0 +1,30 @@
+{
+  "created": "2026-11-06",
+  "new_examples": 32,
+  "replay_examples": 8,
+  "stage2_examples": 40,
+  "unique_behavior_examples_across_stages": 56,
+  "domains": [
+    "disaster recovery",
+    "economic shocks",
+    "fiscal resilience",
+    "leadership",
+    "succession",
+    "integrity and merit",
+    "labour negotiation",
+    "shared growth",
+    "education",
+    "technological change",
+    "foreign policy",
+    "talent and innovation",
+    "language policy",
+    "social cohesion"
+  ],
+  "scope": "Selected public decision patterns; not all of Lee's beliefs or private thoughts.",
+  "sha256": {
+    "extended_sources.jsonl": "180880a2ae5aa73b56749d41e36f3767a2bea25dd7e943149e7d18e48e379a31",
+    "extended_notes.jsonl": "8936d26d0a18496ce5ad26dff5b5c02c7e2adc32456d8d53fb6d42cce88fe282",
+    "extended_cases.jsonl": "90614fe2c7720b1858281327c493f5a36927df7c8d6ebd7052ed9f4cd882492f",
+    "behavior_broad_train.jsonl": "4749d7dcdb6461b6f6a519cfecd9cac290b8afc112fbaf830163e29e0c98e37f"
+  }
+}

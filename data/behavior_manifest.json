@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-06",
+  "train_examples": 24,
+  "validation_examples": 2,
+  "historical_cases": 6,
+  "new_sources": 1,
+  "earthquake_in_training": false,
+  "authoring": "AI-assisted adaptations checked against notes; applications and principles are interpretations, not private thoughts or quotations.",
+  "sha256": {
+    "behavior_sources.jsonl": "70ae07cc4f21534167f047aa796260a74e8a6e9e332486c6246385d202356e2f",
+    "behavior_notes.jsonl": "ca9a6fd7930960065f847bd4298e66c6cc2c0ef8e08162b70e5f251359aa64a6",
+    "behavior_cases.jsonl": "46388e3dec3ea6e643dd007a447cc9ad414c518eaee3ce2a31f051d600666542",
+    "behavior_train.jsonl": "b962f42b1049d73a8cb7c833a24b75caf434f09b41e5cdfa473f2114b4a56cff",
+    "behavior_validation.jsonl": "ad48d1c2a0142563c538658c11ae94c752f589b839236a9a224fbc3f701e176e"
+  }
+}

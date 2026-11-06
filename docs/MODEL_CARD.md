@@ -1,5 +1,16 @@
 # Model card: source-grounded Lee Kuan Yew simulation adapter
 
+## Current model package
+
+The package now includes a trained intent classifier and two LoRA variants that
+share the same base model. The original factual adapter described below is
+preserved. The separate behavior adapter learned Precedent/Application/Limit
+answers from 56 unique authored analogies across fourteen domains; its exact
+two-stage runs are in `reports/training-behavior-stage1.json` and
+`reports/training-behavior.json`. See [BEHAVIOR.md](BEHAVIOR.md). The new model
+can answer hypothetical scenarios without an exact matching historical speech;
+it still cannot recover private thoughts or establish a modern opinion of Lee.
+
 ## Model and intended use
 
 Base: [Qwen/Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct).
@@ -13,7 +24,7 @@ official government service or a reliable account of what Lee would think today.
 The disclosed persona can use first-person phrasing; that does not turn its
 answers into quotations or first-person historical evidence.
 
-## Actual training run
+## Original factual training run
 
 Training completed locally on **6 November 2026**, using Windows, Python 3.12,
 PyTorch 2.6.0 CPU and an Intel i5-1135G7 host. The run used 28 authored training
@@ -44,19 +55,27 @@ examples is not evidence of general factual accuracy or better persona quality.
 
 ## Runtime behavior
 
+The current browser app defaults to `lora` and switches between the factual and
+behavior adapters according to question intent. Hypothetical answers receive
+analogous cases and a separate behavior prompt. The interface renders factual
+precedents from source notes and extracts the model's generated application;
+raw output is retained for evaluation. Unsupported historical questions can
+abstain, while explicitly hypothetical questions can answer without a document.
+
 RAG supplies up to three authored research notes. Deterministic decoding uses
 at most 180 new tokens. The prompt asks for a concise, direct reconstruction
 with note citations. Simple policy checks precede retrieval. Missing or invalid
-note citations trigger a labelled note-summary fallback; raw generations are
+note citations in historical answers trigger a labelled note-summary fallback; raw generations are
 retained in evaluation reports.
 
-The `notes` backend is a separate retrieval-only mode. A response from that
+The CLI's default `notes` backend is a separate non-LLM mode, with authored
+outlines for hypotheticals. A response from that
 backend or a citation fallback must not be counted as a successfully generated
 answer from the adapter. Modern extrapolation labels do not verify modern facts.
 
 ## Known limitations
 
-- A 0.5B model and 28 short examples provide limited language and reasoning quality.
+- A 0.5B model, 28 factual examples and 56 unique behavior examples provide limited language and reasoning quality.
 - Training answers and diagnostic questions were AI-assisted; there is no
   independent historian review or blinded style comparison.
 - Two questions per note reuse an answer, limiting training diversity.

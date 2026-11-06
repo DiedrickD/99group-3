@@ -21,8 +21,18 @@ def digest(path):
 
 
 def load_notes():
-    return read_jsonl(ROOT / "data/notes.jsonl")
+    notes = read_jsonl(ROOT / "data/notes.jsonl")
+    for name in ["behavior_notes.jsonl", "extended_notes.jsonl"]:
+        extra = ROOT / "data" / name
+        if extra.exists():
+            notes += read_jsonl(extra)
+    return notes
 
 
 def load_sources():
-    return {row["source_id"]: row for row in read_jsonl(ROOT / "data/sources.jsonl")}
+    sources = read_jsonl(ROOT / "data/sources.jsonl")
+    for name in ["behavior_sources.jsonl", "extended_sources.jsonl"]:
+        extra = ROOT / "data" / name
+        if extra.exists():
+            sources += read_jsonl(extra)
+    return {row["source_id"]: row for row in sources}

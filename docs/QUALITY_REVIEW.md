@@ -1,5 +1,48 @@
 # Review of actual generated answers
 
+## Current behavior adapter (v3)
+
+The behavior adapter now answers new situations across leadership, economic
+crises, negotiation, foreign policy, social cohesion and technological change.
+All eleven hypothetical generations in the development run used the trained
+Precedent/Application/Limit structure. On the same four questions, with the same
+prompt and retrieved evidence, the original adapter used that structure zero
+times and the behavior adapter four times. This demonstrates response-format
+learning on these cases, not deep persona fidelity.
+
+Inspection of the actual raw outputs found these remaining limitations:
+
+| Case | Observation | Consequence |
+| --- | --- | --- |
+| Earthquake | The raw precedent phrase reverses the fire/meeting causal relationship. The application discusses coordination and displaced households. | Factual precedent text is now rendered directly from the research notes; the model's application remains separately visible. |
+| Leadership | Applies merit and integrity to selecting competent leaders, independently of personal networks. | Relevant to the question, but not an independently validated reconstruction of Lee's decision. |
+| Economic crisis | Refers to long-term investment without clearly addressing immediate service needs. | Broadly themed but incomplete; the cited principle does not establish practical adequacy. |
+| Negotiation | Moves from fair bargaining to integrity, performance reviews and oversight. | Partly off topic. A valid source ID does not make the recommendation useful. |
+| ChatGPT false premise | Corrects the nonexistent later speech, but the generated application mostly says to compare contexts and apply principles. | The refusal problem is fixed; the technology recommendation is still generic. |
+| Remote work / empty corpus | Produces general skills or values advice with weak connection to the specific situation. | Training format does not guarantee robust analogical transfer. |
+
+The interface extracts the actual generated Application section and supplies
+historical precedent text from retrieved notes. It does not replace the model's
+application with an authored answer. The full raw output remains in
+[the report](../reports/behavior-lora-v3.json). The stored display text was
+recomposed with this safeguard after generation; no new generation or improved
+raw-model metric is claimed by that transformation.
+
+These are development observations by the implementing coding assistant, not
+independent expert ratings. Topic metadata was adjusted during development to
+improve retrieval of relevant analogues. The announced cases are not a blind
+test. A broader, independently reviewed corpus, contradictory examples across
+decades and a larger model should be compared on a frozen unseen set before
+claiming reliable coverage of Lee's public decision patterns.
+
+## Original factual adapter (v1)
+
+The observations below concern the **original factual adapter and strict-evidence
+runtime**. They are preserved as development evidence, not passed off as a review
+of the new behavior adapter. Current behavior runs and raw outputs are in
+`reports/behavior-lora-v3.json`; the model extension is explained in
+[BEHAVIOR.md](BEHAVIOR.md).
+
 This is a qualitative inspection by the implementing coding assistant against
 the supplied notes, not an independent historian review or a calibrated human
 evaluation score. It documents failures rather than hiding them behind a good
@@ -30,7 +73,8 @@ be assessed separately from citation formatting.
 
 ## Decision for this prototype
 
-The dependency-free, clearly labelled `notes` backend remains the default.
+The dependency-free, clearly labelled `notes` backend remains the CLI default;
+the browser app now defaults to the trained `lora` backend.
 The `lora` backend is an inspectable experimental option with real training
 artifacts and recorded failures. The live experimental demo, when running,
 uses that adapter; readers should compare its answer to the linked notes.

@@ -1,0 +1,269 @@
+{
+  "version": 3,
+  "description": "Authored interpretations of documented public positions; not Lee Kuan Yew's private thoughts or a complete worldview.",
+  "biography": {
+    "reference_id": "B01",
+    "title": "National Library Board: Lee Kuan Yew reference guide",
+    "url": "https://reference.nlb.gov.sg/singapore/people/lee-kuan-yew/",
+    "death_date": "2015-03-23"
+  },
+  "principles": [
+    {
+      "id": "adaptation",
+      "summary": "Re-examine a policy when circumstances change; avoid treating an earlier position as permanent.",
+      "note_id": "N06",
+      "keywords": [
+        "policy",
+        "change",
+        "decision",
+        "pragmatic",
+        "chatgpt",
+        "ai",
+        "technology",
+        "automation",
+        "career"
+      ]
+    },
+    {
+      "id": "practical_solutions",
+      "summary": "Study useful solutions and adapt them to local constraints rather than copying a system wholesale.",
+      "note_id": "N05",
+      "keywords": [
+        "chatgpt",
+        "ai",
+        "technology",
+        "automation",
+        "digital",
+        "tool",
+        "water",
+        "climate",
+        "transport",
+        "innovation"
+      ]
+    },
+    {
+      "id": "skills",
+      "summary": "Value practical and vocational skills alongside academic education.",
+      "note_id": "N02",
+      "keywords": [
+        "chatgpt",
+        "ai",
+        "automation",
+        "education",
+        "student",
+        "learn",
+        "learning",
+        "school",
+        "job",
+        "jobs",
+        "career",
+        "work",
+        "skills",
+        "university"
+      ]
+    },
+    {
+      "id": "resilience",
+      "summary": "Preserve buffers and take a long view when managing resources and uncertainty.",
+      "note_id": "N03",
+      "keywords": [
+        "reserves",
+        "crisis",
+        "buffer",
+        "saving",
+        "savings",
+        "risk",
+        "money",
+        "career",
+        "business",
+        "startup",
+        "start",
+        "company",
+        "investment",
+        "recession",
+        "downturn",
+        "fiscal",
+        "budget",
+        "services"
+      ]
+    },
+    {
+      "id": "integrity",
+      "summary": "Expect leaders to uphold the conduct they demand of their institutions.",
+      "note_id": "N16",
+      "keywords": [
+        "integrity",
+        "honest",
+        "honesty",
+        "corruption",
+        "leadership",
+        "leader",
+        "leaders",
+        "trust",
+        "accountability",
+        "government"
+      ]
+    },
+    {
+      "id": "small_state_security",
+      "summary": "Consider the security constraints and autonomy of a small state among larger powers.",
+      "note_id": "N09",
+      "keywords": [
+        "security",
+        "sovereignty",
+        "powers",
+        "geopolitics",
+        "country",
+        "china",
+        "america",
+        "war",
+        "diplomacy"
+      ]
+    },
+    {
+      "id": "disaster_response",
+      "summary": "Coordinate institutions and address displacement, drawing cautiously on the Bukit Ho Swee fire response.",
+      "note_id": "C01",
+      "keywords": [
+        "earthquake",
+        "eartquake",
+        "disaster",
+        "disasters",
+        "flood",
+        "storm",
+        "tsunami",
+        "fire",
+        "emergency",
+        "shelter",
+        "displaced"
+      ]
+    },
+    {
+      "id": "leadership_succession",
+      "summary": "Develop successors and let a new team learn from earlier performance.",
+      "note_id": "C02",
+      "keywords": [
+        "leadership",
+        "succession",
+        "leader",
+        "team",
+        "delegate",
+        "delegation",
+        "retirement",
+        "founder"
+      ]
+    },
+    {
+      "id": "merit_and_integrity",
+      "summary": "Use relevant competence and institutional integrity rather than personal connections.",
+      "note_id": "C03",
+      "keywords": [
+        "leadership",
+        "leader",
+        "integrity",
+        "merit",
+        "corruption",
+        "nepotism",
+        "hiring",
+        "ethics",
+        "trust",
+        "friend",
+        "friends",
+        "connections",
+        "promotes",
+        "capable"
+      ]
+    },
+    {
+      "id": "negotiation",
+      "summary": "Consider fair bargaining, cooperation and whether workers share in growth.",
+      "note_id": "C04",
+      "keywords": [
+        "labour",
+        "labor",
+        "negotiation",
+        "wages",
+        "bargaining",
+        "workers",
+        "conflict",
+        "growth",
+        "inequality"
+      ]
+    },
+    {
+      "id": "worker_adaptation",
+      "summary": "Help workers acquire capabilities for technological change, as in the computer-training account.",
+      "note_id": "C05",
+      "keywords": [
+        "chatgpt",
+        "ai",
+        "automation",
+        "computers",
+        "technology",
+        "work",
+        "jobs",
+        "training"
+      ]
+    },
+    {
+      "id": "foreign_policy",
+      "summary": "Examine regional stability and relations among major powers.",
+      "note_id": "N07",
+      "keywords": [
+        "china",
+        "america",
+        "diplomacy",
+        "foreign",
+        "geopolitics",
+        "rivalry",
+        "rival",
+        "powers"
+      ]
+    },
+    {
+      "id": "diverse_talent",
+      "summary": "Enable capable people and competing perspectives to contribute.",
+      "note_id": "N08",
+      "keywords": [
+        "talent",
+        "innovation",
+        "diversity",
+        "hiring",
+        "organisation",
+        "organization",
+        "ideas"
+      ]
+    },
+    {
+      "id": "language",
+      "summary": "Balance a common working language with retained mother tongues.",
+      "note_id": "N01",
+      "keywords": [
+        "language",
+        "english",
+        "communication",
+        "multilingual",
+        "identity"
+      ]
+    },
+    {
+      "id": "cohesion",
+      "summary": "Maintain cooperation in responding to a shared shock.",
+      "note_id": "N12",
+      "keywords": [
+        "cohesion",
+        "divided",
+        "community",
+        "society",
+        "crisis",
+        "solidarity",
+        "setback"
+      ]
+    }
+  ],
+  "default_principles": [
+    "adaptation",
+    "resilience",
+    "skills"
+  ]
+}

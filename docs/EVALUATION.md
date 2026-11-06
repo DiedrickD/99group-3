@@ -1,5 +1,19 @@
 # Evaluation and its limits
 
+## Current behavior evaluation
+
+The current runtime uses a 16-case behavior diagnostic and a recorded four-case
+comparison with the behavior adapter disabled. It checks historical/hypothetical
+routing, false-premise correction, responding without an exact document,
+analogue retrieval and Precedent/Application/Limit structure. See
+[`reports/behavior-lora-v3.json`](../reports/behavior-lora-v3.json) and
+[BEHAVIOR.md](BEHAVIOR.md). Routing and citation scores do not establish that
+the analogy is faithful or that the recommendation is useful.
+
+The original 22-case results below describe the earlier strict-evidence runtime.
+Its refusal of a posthumous speech request was correct under that earlier
+policy; the new policy corrects the premise and then gives a hypothetical answer.
+
 The measured JSON reports in `reports/` are the source of truth. The generated
 `RESULTS.md` presents their comparison. Results are from a tiny **development
 diagnostic benchmark**, not a historical accuracy certification.
@@ -75,7 +89,7 @@ review.
 
 ## Verification status on 6 November 2026
 
-Local source/data validation, six grounding tests, artifact lineage checks,
+Local source/data validation, eleven grounding tests, artifact lineage checks,
 notebook syntax checks and real local/public Gradio chat requests passed.
 The published GitHub Actions job could not start because of an account
 restriction; no CI pass is claimed. Its first run is

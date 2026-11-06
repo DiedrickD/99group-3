@@ -1,4 +1,4 @@
-"""Publish recorded, executed model outputs rather than hand-written demo answers."""
+"""Publish original v1 outputs separately from current behavior examples."""
 import json
 import sys
 from pathlib import Path
@@ -14,7 +14,7 @@ def main():
     report = json.loads(report_path.read_text(encoding="utf-8"))
     selected = {"english", "reserves", "revision", "china", "diversity", "pension", "modern", "false", "inject"}
     examples = [row["result"] for row in report["rows"] if row["case"]["id"] in selected]
-    write_json(ROOT / "docs/chat_examples.json", examples)
+    write_json(ROOT / "docs/chat_examples_v1.json", examples)
     text = """# Executed text-chat examples
 
 These are actual outputs recorded by the `lora` backend with RAG on the
@@ -48,7 +48,7 @@ This page is the permanent public chat-example link, not an always-on chatbot.
         text += f"## Example {index}\n\n**User:** {result['question']}\n\n"
         text += f"**System status:** `{result['status']}`; warm latency {result['latency_seconds']:.3f}s.\n\n"
         text += render(result) + "\n\n"
-    (ROOT / "docs/CHAT_EXAMPLES.md").write_text(text.rstrip() + "\n", encoding="utf-8", newline="\n")
+    (ROOT / "docs/CHAT_EXAMPLES_V1.md").write_text(text.rstrip() + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

@@ -22,6 +22,10 @@ def main():
     parser.add_argument("--accumulation", type=int, default=4)
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--output", default=str(ROOT / "models/lky-lora"))
+    parser.add_argument("--train-data", default="data/train.jsonl")
+    parser.add_argument("--validation-data", default="data/validation.jsonl")
+    parser.add_argument("--report", default="reports/training.json")
+    parser.add_argument("--resume-adapter")
     args = parser.parse_args()
     if min(args.epochs, args.max_length, args.accumulation, args.threads) < 1:
         parser.error("epochs, max-length, accumulation and threads must be positive")
@@ -38,18 +42,26 @@ def main():
     model.name_or_path = config["model_id"]
     model.config._name_or_path = config["model_id"]
     model.config.use_cache = False
-    model = get_peft_model(model, LoraConfig(r=8, lora_alpha=16, lora_dropout=0.05,
-                                             target_modules=["q_proj", "v_proj"], task_type="CAUSAL_LM", bias="none"))
+    if args.resume_adapter:
+        from peft import PeftModel
+        parent = json.loads((Path(args.resume_adapter) / "adapter_config.json").read_text(encoding="utf-8"))
+        if parent["base_model_name_or_path"] != config["model_id"] or parent.get("revision") != config["revision"]:
+            raise ValueError("Resume adapter must match the configured base model and revision")
+        model = PeftModel.from_pretrained(model, args.resume_adapter, is_trainable=True)
+    else:
+        model = get_peft_model(model, LoraConfig(r=8, lora_alpha=16, lora_dropout=0.05,
+                                                 target_modules=["q_proj", "v_proj"], task_type="CAUSAL_LM", bias="none"))
     model.peft_config["default"].base_model_name_or_path = config["model_id"]
     model.peft_config["default"].revision = config["revision"]
     trainable, total = model.get_nb_trainable_parameters()
     note_map = {n["note_id"]: n for n in load_notes()}
-    train = read_jsonl(ROOT / "data/train.jsonl")
-    validation = read_jsonl(ROOT / "data/validation.jsonl")
+    train_path, validation_path = ROOT / args.train_data, ROOT / args.validation_data
+    train = read_jsonl(train_path)
+    validation = read_jsonl(validation_path)
     assert not ({s for r in train for s in r["source_ids"]} & {s for r in validation for s in r["source_ids"]})
 
     def encode(row):
-        messages = messages_for(row["question"], [note_map[nid] for nid in row["note_ids"]])
+        messages = messages_for(row["question"], [note_map[nid] for nid in row["note_ids"]], row.get("mode", "historical"))
         prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         prefix = tokenizer.encode(prompt, add_special_tokens=False)
         answer = tokenizer.encode(row["answer"] + tokenizer.eos_token, add_special_tokens=False)
@@ -113,12 +125,14 @@ def main():
               "max_length": args.max_length, "lora": {"r": 8, "alpha": 16, "dropout": 0.05, "targets": ["q_proj", "v_proj"]},
               "trainable_parameters": trainable, "total_parameters_including_adapter": total,
               "train_examples": len(train), "validation_examples": len(validation),
-              "training_data_sha256": digest(ROOT / "data/train.jsonl"),
-              "validation_data_sha256": digest(ROOT / "data/validation.jsonl"),
+              "training_data_file": args.train_data, "validation_data_file": args.validation_data,
+              "training_data_sha256": digest(train_path),
+              "validation_data_sha256": digest(validation_path),
+              "parent_adapter_sha256": digest(Path(args.resume_adapter) / "adapter_model.safetensors") if args.resume_adapter else None,
               "validation_loss_before": before, "validation_loss_after": after,
               "elapsed_seconds": round(time.perf_counter() - started, 2), "epochs_log": logs,
               "interpretation": "Small feasibility experiment. Loss does not establish historical accuracy, persona quality, or improvement in chatbot answers."}
-    write_json(ROOT / "reports/training.json", report)
+    write_json(ROOT / args.report, report)
     write_json(Path(args.output) / "run.json", report)
     if Path(args.output).resolve() == (ROOT / "models/lky-lora").resolve():
         write_json(ROOT / "models/manifest.json", {

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     names = ["notes", "base-rag", "lora-rag", "base-no-rag", "lora-no-rag"]
-    text = "# Recorded experiment results\n\nGenerated from the committed JSON reports. Small development diagnostics, not general historical accuracy scores.\n\n"
+    text = "# Recorded experiment results\n\nGenerated from the committed JSON reports. Small development diagnostics, not general historical accuracy scores.\n\n## Original factual experiment (v1 strict-evidence runtime)\n\nThese original reports predate the behavior adapter and current hypothetical routing. Their historical abstention policy is not the current policy.\n\n"
     training = json.loads((ROOT / "reports/training.json").read_text(encoding="utf-8"))
     text += (f"Training completed on `{training['device']}` with `{training['base_model']['model_id']}`. "
              f"The adapter trained {training['trainable_parameters']:,} parameters for {training['epochs']} epochs "
@@ -47,7 +47,45 @@ The Colab notebook is provided for reproduction. These records do not establish
 a Colab execution or results for a larger model. Full transcripts are retained,
 including failed raw citations and any fallback behavior.
 """
-    (ROOT / "docs/RESULTS.md").write_text(text, encoding="utf-8")
+    if (ROOT / "reports/behavior-lora-v3.json").exists():
+        current = json.loads((ROOT / "reports/behavior-lora-v3.json").read_text(encoding="utf-8"))
+        baseline = json.loads((ROOT / "reports/behavior-baseline-v3.json").read_text(encoding="utf-8"))
+        metrics = current["metrics"]
+        subset = [row for row in current["rows"] if row["case"]["id"] in baseline["selected_ids"]]
+        structured = sum(row["three_parts_present"] for row in subset)
+        text += f"""
+## Current behavior experiment (v3)
+
+The separate behavior adapter continued from the factual adapter: 24 examples
+for three epochs, then 40 examples for one epoch (32 new plus eight replayed).
+That is 56 unique authored behavior examples across 14 areas, with two validation
+examples. A separate intent router was trained on 48 labelled questions.
+
+- Routing/correction/label checks: {metrics['routing_and_labels_passed']}/{current['cases']}.
+- Hypothetical LLM answers: {metrics['hypothetical_model_answers']}.
+- Raw three-part answers: {metrics['three_part_model_answers']}/{metrics['hypothetical_model_answers']}.
+- Labelled analogous precedents retrieved: {metrics['labelled_precedents_found']}/{metrics['labelled_precedent_cases']}.
+- Same four development cases, same prompt and evidence: the original adapter
+  produced {baseline['metrics']['three_part_model_answers']}/4 three-part answers;
+  the behavior adapter produced {structured}/4. This is a format comparison,
+  not a persona-fidelity or recommendation-quality score.
+
+[Current raw outputs](../reports/behavior-lora-v3.json),
+[original-adapter comparison](../reports/behavior-baseline-v3.json),
+[notes-only check](../reports/behavior-notes-v3.json).
+
+Manual inspection found a reversed causal phrase in a generated historical
+precedent and several generic or off-topic applications. The current interface
+therefore renders factual precedents from source notes and extracts the model's
+application separately. The report records this display transformation and
+retains the raw output and original metrics. It is not a new generation run.
+See [quality review](QUALITY_REVIEW.md) and [training details](BEHAVIOR.md).
+
+These were announced development cases, including the user's earthquake example.
+They are not an independent blind test. There is no measured score for reproducing
+Lee's actual decisions, private thinking, or all domains of his life.
+"""
+    (ROOT / "docs/RESULTS.md").write_text(text.rstrip() + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

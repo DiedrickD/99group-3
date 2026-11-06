@@ -1,0 +1,10 @@
+{
+  "created_date": "2026-11-06",
+  "url": "https://3baba5f3e0cf4f2513.gradio.live",
+  "backend": "lora",
+  "http_status": 200,
+  "question": "Why maintain national reserves?",
+  "response": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.\n\nNational reserves were maintained because they provided protection during downturns, support for confidence and a contributor to public revenue. [N03]\n\nSources:\n[N03] MM Lee Kuan Yew at the GIC 30th Anniversary Dinner (2011-05-09), passages on reserves, talent and calculated investment risks\nhttps://www.pmo.gov.sg/newsroom/speech-minister-mentor-lee-kuan-yew-gic-30th-anniversary-dinner-9-may-2011-shangri-la/",
+  "temporary": true,
+  "availability": "Requires this computer and the Gradio server process to remain running; tunnel has a maximum lifetime."
+}

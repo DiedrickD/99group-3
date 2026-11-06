@@ -1,0 +1,24 @@
+{
+  "adapter_file": "models/lky-behavior/adapter_model.safetensors",
+  "sha256": "74428333eb5f39350d48abdc8325f3190795d5a68b86e9d9464379fed58aeffd",
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "apache-2.0",
+    "model_card": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "resolved_date": "2026-11-06",
+    "local_directory": "models/base/Qwen--Qwen2.5-0.5B-Instruct"
+  },
+  "parent_factual_adapter_sha256": "2c8a10299dd76c797e3521ff361e9df5ade0b672bac43b921626480eaca99ecb",
+  "intermediate_stage1_sha256": "dfa6ea1a7b5bd7939b28af5ca047931f7b7d0c801e90af3f0b942f1a3d1a684f",
+  "intermediate_checkpoint_distributed": false,
+  "reports_sha256": {
+    "reports/training-behavior-stage1.json": "0001c0c356d81b9ca080854217e5b550794d80eb2ffefd9bc6ba4c2e5b18d660",
+    "reports/training-behavior.json": "4f29cd41821f16013eccfb63c8e91db59d62a191bba7ce0f4fad1a02b16bdb7a"
+  },
+  "training_data_files": [
+    "data/behavior_train.jsonl",
+    "data/behavior_broad_train.jsonl"
+  ],
+  "validation_file": "data/behavior_validation.jsonl"
+}

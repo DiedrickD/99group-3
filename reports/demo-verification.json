@@ -1,10 +1,24 @@
 {
-  "created_date": "2026-11-06",
-  "url": "https://3baba5f3e0cf4f2513.gradio.live",
+  "created_utc": "2026-11-06T15:48:43.851424+00:00",
+  "url": "https://5e7dc39f5c5c6887e0.gradio.live",
   "backend": "lora",
+  "runtime_policy": "v3",
   "http_status": 200,
-  "question": "Why maintain national reserves?",
-  "response": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.\n\nNational reserves were maintained because they provided protection during downturns, support for confidence and a contributor to public revenue. [N03]\n\nSources:\n[N03] MM Lee Kuan Yew at the GIC 30th Anniversary Dinner (2011-05-09), passages on reserves, talent and calculated investment risks\nhttps://www.pmo.gov.sg/newsroom/speech-minister-mentor-lee-kuan-yew-gic-30th-anniversary-dinner-9-may-2011-shangri-la/",
+  "requests": [
+    {
+      "question": "How would you choose leaders when personal connections conflict with merit?",
+      "response": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.\n\nHypothetical interpretation / extrapolation, not a documented view of Lee Kuan Yew.\n\nHistorical precedent (source notes): In the same 2010 address, Lee linked capable institutions with leadership integrity, appointment on merit rather than personal connections, and equal opportunity across race, language and religion. [C03]\n\nPossible application (LLM-generated): I would appoint people who are able and honest, share responsibilities and respect their contributions.\n\nLimit: An analogy identifies a possible approach, not proof of Lee's opinion. Differences in the new situation and relevant expertise still matter.\n\nHistorical basis (supports the principles, not this hypothetical conclusion):\n- Use relevant competence and institutional integrity rather than personal connections. [C03]\n- Expect leaders to uphold the conduct they demand of their institutions. [N16]\n- Consider fair bargaining, cooperation and whether workers share in growth. [C04]\n\nSources:\n[C03] MM Lee Kuan Yew at Tanjong Pagar National Day Celebrations 2010 (2010-08-15), passages on basic values, NEWater and policy revision\nhttps://www.pmo.gov.sg/newsroom/speech-mm-lee-kuan-yew-tanjong-pagar-national-day-celebrations-tanjong-pagar-community/\n[N16] Lee Kuan Yew moving the Parliamentary Pensions (Amendment) Bill (1975-03-27), PDF pages 2-3, corruption convictions and leadership standards\nhttps://www.nas.gov.sg/archivesonline/data/pdfdoc/lky19750327.pdf\n[C04] Lee Kuan Yew at NTUC's 50th Anniversary Dinner (2011-05-13), PDF pages 2-4: shared growth, tripartite cooperation, worker training for computer adoption\nhttps://www.nas.gov.sg/archivesonline/data/pdfdoc/lky20110513.pdf"
+    },
+    {
+      "question": "Why maintain national reserves?",
+      "response": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.\n\nNational reserves were maintained because they provided protection during downturns, support for confidence and a contributor to public revenue. [N03]\n\nSources:\n[N03] MM Lee Kuan Yew at the GIC 30th Anniversary Dinner (2011-05-09), passages on reserves, talent and calculated investment risks\nhttps://www.pmo.gov.sg/newsroom/speech-minister-mentor-lee-kuan-yew-gic-30th-anniversary-dinner-9-may-2011-shangri-la/"
+    }
+  ],
+  "checks": {
+    "hypothetical_application": true,
+    "leadership_precedent": true,
+    "historical_answer": true
+  },
   "temporary": true,
   "availability": "Requires this computer and the Gradio server process to remain running; tunnel has a maximum lifetime."
 }

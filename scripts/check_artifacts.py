@@ -13,7 +13,10 @@ def main():
     required = ["README.md", "docs/DATASET.md", "docs/WORKFLOW.md", "docs/EVALUATION.md",
                 "docs/MODEL_CARD.md", "docs/SUBMISSION.md", "docs/CHAT_EXAMPLES.md", "docs/RESULTS.md",
                 "models/lky-lora/adapter_model.safetensors", "models/lky-lora/adapter_config.json",
-                "reports/training.json", "notebooks/train_colab.ipynb"]
+                "reports/training.json", "notebooks/train_colab.ipynb", "docs/BEHAVIOR.md",
+                "models/router.json", "models/behavior_manifest.json",
+                "models/lky-behavior/adapter_model.safetensors", "models/lky-behavior/adapter_config.json",
+                "reports/training-behavior.json", "reports/behavior-lora-v3.json"]
     assert all((ROOT / path).is_file() for path in required)
     training = json.loads((ROOT / "reports/training.json").read_text(encoding="utf-8"))
     assert training["training_data_sha256"] == digest(ROOT / "data/train.jsonl")

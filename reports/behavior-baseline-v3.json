@@ -1,0 +1,381 @@
+{
+  "runtime_policy": "v3",
+  "backend": "lora",
+  "cases": 4,
+  "selected_ids": [
+    "chatgpt-false-premise",
+    "earthquake",
+    "leadership",
+    "economic-crisis"
+  ],
+  "behavior_adapter_enabled": false,
+  "dataset_sha256": "258f00434b3f1e928e9167f86796328767d38c9a1b4545ed1514e376a8d25b09",
+  "persona_sha256": "8baff7f33a3ac26c6bd2dd3b3b88046be9708853a006b175bea9bc4aed91e513",
+  "behavior_adapter_sha256": null,
+  "metrics": {
+    "routing_and_labels_passed": 4,
+    "hypothetical_model_answers": 4,
+    "hypothetical_outlines": 0,
+    "three_part_model_answers": 0,
+    "labelled_precedents_found": 3,
+    "labelled_precedent_cases": 3,
+    "hypothetical_raw_refusal_patterns": 0,
+    "speech_fabrication_patterns": 0
+  },
+  "limitations": [
+    "Routing checks do not establish persona fidelity or recommendation quality.",
+    "Refusal and fabrication regular expressions are incomplete diagnostics; inspect raw answers.",
+    "Hypothetical recommendations are interpretations, not historical facts or private thought transcripts.",
+    "The original factual adapter is preserved. A separate behavior adapter is trained on event/action/analogy targets.",
+    "Earthquake recommendations are not in behavior training questions or targets; the announced diagnostic is still not a blind external test."
+  ],
+  "rows": [
+    {
+      "case": {
+        "id": "chatgpt-false-premise",
+        "question": "What speech did Lee give about ChatGPT in 2024?",
+        "expected_mode": "hypothetical",
+        "expected_abstain": false,
+        "expected_correction": true
+      },
+      "result": {
+        "runtime_policy": "v3",
+        "question": "What speech did Lee give about ChatGPT in 2024?",
+        "answer": "Lee Kuan Yew died on 23 March 2015, so he could not have delivered the requested later speech. The response below considers the topic hypothetically.\n\nHypothetical interpretation / extrapolation, not a documented view of Lee Kuan Yew.\n\nHistorical precedent (source notes): In that address, Lee described unions and government helping workers adapt to computers through training. This is evidence about an earlier technological transition, not a recorded view of generative AI. [C05]\n\nPossible application (LLM-generated): [No precedent is available.] A Lee-inspired leader would likely consider the following:\n\n1. The context of the current situation (e.g., the impact of ChatGPT on the economy, society, etc.) and the need to adapt to it.\n2. The lessons learned from previous experiences (e.g., the role of technology in shaping society).\n3. The potential for innovation and adaptation in the face of new challenges.\n4. The importance of flexibility and learning from others.\n5. The need for a balanced approach to technology and human interaction.\n6. The potential for leveraging technology to enhance social cohesion and productivity.\n7. The need for a nuanced understanding of the role of technology in shaping society.\n8. The importance of continuous learning and adaptation in the face of new challenges.\n9. The potential for leveraging technology to promote social justice and equality.\n10. The need for a balanced approach\n\nLimit: An analogy identifies a possible approach, not proof of Lee's opinion. Differences in the new situation and relevant expertise still matter.\n\nHistorical basis (supports the principles, not this hypothetical conclusion):\n- Help workers acquire capabilities for technological change, as in the computer-training account. [C05]\n- Re-examine a policy when circumstances change; avoid treating an earlier position as permanent. [N06]\n- Study useful solutions and adapt them to local constraints rather than copying a system wholesale. [N05]",
+        "disclosure": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.",
+        "generation_adapter": "default",
+        "backend": "lora",
+        "rag": true,
+        "status": "hypothetical_generated",
+        "policy_reason": null,
+        "extrapolation": true,
+        "response_mode": "hypothetical",
+        "direct_retrieved": [
+          "C05"
+        ],
+        "principles": [
+          {
+            "note_id": "C05",
+            "summary": "Help workers acquire capabilities for technological change, as in the computer-training account."
+          },
+          {
+            "note_id": "N06",
+            "summary": "Re-examine a policy when circumstances change; avoid treating an earlier position as permanent."
+          },
+          {
+            "note_id": "N05",
+            "summary": "Study useful solutions and adapt them to local constraints rather than copying a system wholesale."
+          }
+        ],
+        "premise_correction": "Lee Kuan Yew died on 23 March 2015, so he could not have delivered the requested later speech. The response below considers the topic hypothetically.",
+        "correction_source": {
+          "reference_id": "B01",
+          "title": "National Library Board: Lee Kuan Yew reference guide",
+          "url": "https://reference.nlb.gov.sg/singapore/people/lee-kuan-yew/",
+          "death_date": "2015-03-23"
+        },
+        "retrieved": [
+          "C05",
+          "N06",
+          "N05"
+        ],
+        "references": [
+          {
+            "note_id": "C05",
+            "source_id": "S10",
+            "title": "Lee Kuan Yew at NTUC's 50th Anniversary Dinner",
+            "publisher": "National Archives of Singapore",
+            "author": "Lee Kuan Yew",
+            "event_date": "2011-05-13",
+            "page_date": null,
+            "url": "https://www.nas.gov.sg/archivesonline/data/pdfdoc/lky20110513.pdf",
+            "locator": "PDF pages 2-4: shared growth, tripartite cooperation, worker training for computer adoption",
+            "source_type": "primary_speech",
+            "accessed": "2026-11-06",
+            "split": "behavior_train",
+            "rights": "Third-party speech; only original research notes are distributed.",
+            "date_note": ""
+          },
+          {
+            "note_id": "N06",
+            "source_id": "S03",
+            "title": "MM Lee Kuan Yew at Tanjong Pagar National Day Celebrations 2010",
+            "publisher": "PMO",
+            "event_date": "2010-08-15",
+            "page_date": "2010-08-15",
+            "url": "https://www.pmo.gov.sg/newsroom/speech-mm-lee-kuan-yew-tanjong-pagar-national-day-celebrations-tanjong-pagar-community/",
+            "locator": "passages on basic values, NEWater and policy revision",
+            "split": "train",
+            "author": "Lee Kuan Yew",
+            "accessed": "2026-11-06",
+            "source_type": "primary_speech",
+            "rights": "Third-party source; no source-text redistribution license asserted.",
+            "date_note": ""
+          },
+          {
+            "note_id": "N05",
+            "source_id": "S03",
+            "title": "MM Lee Kuan Yew at Tanjong Pagar National Day Celebrations 2010",
+            "publisher": "PMO",
+            "event_date": "2010-08-15",
+            "page_date": "2010-08-15",
+            "url": "https://www.pmo.gov.sg/newsroom/speech-mm-lee-kuan-yew-tanjong-pagar-national-day-celebrations-tanjong-pagar-community/",
+            "locator": "passages on basic values, NEWater and policy revision",
+            "split": "train",
+            "author": "Lee Kuan Yew",
+            "accessed": "2026-11-06",
+            "source_type": "primary_speech",
+            "rights": "Third-party source; no source-text redistribution license asserted.",
+            "date_note": ""
+          }
+        ],
+        "raw_generation": "[No precedent is available.] A Lee-inspired leader would likely consider the following:\n\n1. The context of the current situation (e.g., the impact of ChatGPT on the economy, society, etc.) and the need to adapt to it.\n2. The lessons learned from previous experiences (e.g., the role of technology in shaping society).\n3. The potential for innovation and adaptation in the face of new challenges.\n4. The importance of flexibility and learning from others.\n5. The need for a balanced approach to technology and human interaction.\n6. The potential for leveraging technology to enhance social cohesion and productivity.\n7. The need for a nuanced understanding of the role of technology in shaping society.\n8. The importance of continuous learning and adaptation in the face of new challenges.\n9. The potential for leveraging technology to promote social justice and equality.\n10. The need for a balanced approach",
+        "citation_fallback": false,
+        "latency_seconds": 18.306
+      },
+      "checks": {
+        "mode_matches": true,
+        "abstention_matches": true,
+        "correction_matches": true,
+        "interpretation_label_present": true
+      },
+      "three_parts_present": false,
+      "raw_precedent_ids_valid": false,
+      "labelled_precedent_retrieved": null,
+      "raw_refusal_pattern": false,
+      "raw_speech_fabrication_pattern": false
+    },
+    {
+      "case": {
+        "id": "earthquake",
+        "question": "What will Lee do on an eartquake disaster so big?",
+        "expected_mode": "hypothetical",
+        "expected_abstain": false,
+        "expected_correction": false,
+        "relevant_precedent": "C01"
+      },
+      "result": {
+        "runtime_policy": "v3",
+        "question": "What will Lee do on an eartquake disaster so big?",
+        "answer": "Hypothetical interpretation / extrapolation, not a documented view of Lee Kuan Yew.\n\nHistorical precedent (source notes): After the 1961 Bukit Ho Swee urban fire, Lee announced plans to relocate displaced families, following an emergency Cabinet meeting and consultation with HDB. This describes a collective government response; it does not establish a forest-fire or earthquake policy. [C01]\n\nPossible application (LLM-generated): [No precedent]. I would recommend moving people from affected areas. The government has already made plans to relocate families after the 1961 Bukit Ho Swee urban fire. If there is another big earthquake disaster, I would advise moving people from affected areas.\n\nLimit: An analogy identifies a possible approach, not proof of Lee's opinion. Differences in the new situation and relevant expertise still matter.\n\nHistorical basis (supports the principles, not this hypothetical conclusion):\n- Coordinate institutions and address displacement, drawing cautiously on the Bukit Ho Swee fire response. [C01]",
+        "disclosure": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.",
+        "generation_adapter": "default",
+        "backend": "lora",
+        "rag": true,
+        "status": "hypothetical_generated",
+        "policy_reason": null,
+        "extrapolation": true,
+        "response_mode": "hypothetical",
+        "direct_retrieved": [
+          "C01"
+        ],
+        "principles": [
+          {
+            "note_id": "C01",
+            "summary": "Coordinate institutions and address displacement, drawing cautiously on the Bukit Ho Swee fire response."
+          }
+        ],
+        "premise_correction": "",
+        "correction_source": null,
+        "retrieved": [
+          "C01"
+        ],
+        "references": [
+          {
+            "note_id": "C01",
+            "source_id": "S09",
+            "title": "Bukit Ho Swee fire",
+            "publisher": "National Library Board Singapore",
+            "author": "NLB Infopedia",
+            "event_date": "1961-05-25",
+            "page_date": null,
+            "url": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=8a0ca033-7b44-47a1-b4cd-f841debdf6db",
+            "locator": "Government response and Relocation of affected families sections",
+            "source_type": "institutional_secondary_history",
+            "accessed": "2026-11-06",
+            "split": "behavior_train",
+            "rights": "Third-party article; only original research notes are distributed.",
+            "date_note": "Event date identifies the fire; the recorded announcement followed the next day."
+          }
+        ],
+        "raw_generation": "[No precedent]. I would recommend moving people from affected areas. The government has already made plans to relocate families after the 1961 Bukit Ho Swee urban fire. If there is another big earthquake disaster, I would advise moving people from affected areas.",
+        "citation_fallback": false,
+        "latency_seconds": 6.241
+      },
+      "checks": {
+        "mode_matches": true,
+        "abstention_matches": true,
+        "correction_matches": true,
+        "interpretation_label_present": true
+      },
+      "three_parts_present": false,
+      "raw_precedent_ids_valid": false,
+      "labelled_precedent_retrieved": true,
+      "raw_refusal_pattern": false,
+      "raw_speech_fabrication_pattern": false
+    },
+    {
+      "case": {
+        "id": "leadership",
+        "question": "How might Lee respond when a company promotes friends rather than capable people?",
+        "expected_mode": "hypothetical",
+        "expected_abstain": false,
+        "expected_correction": false,
+        "relevant_precedent": "C03"
+      },
+      "result": {
+        "runtime_policy": "v3",
+        "question": "How might Lee respond when a company promotes friends rather than capable people?",
+        "answer": "Hypothetical interpretation / extrapolation, not a documented view of Lee Kuan Yew.\n\nHistorical precedent (source notes): In the same 2010 address, Lee linked capable institutions with leadership integrity, appointment on merit rather than personal connections, and equal opportunity across race, language and religion. [C03]\n\nPossible application (LLM-generated): [No precedent is available.]  \nIn the same 2010 address, Lee linked capable institutions with leadership integrity, appointment on merit rather than personal connections, and equal opportunity across race, language and religion.  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent\n\nLimit: An analogy identifies a possible approach, not proof of Lee's opinion. Differences in the new situation and relevant expertise still matter.\n\nHistorical basis (supports the principles, not this hypothetical conclusion):\n- Use relevant competence and institutional integrity rather than personal connections. [C03]\n- Preserve buffers and take a long view when managing resources and uncertainty. [N03]",
+        "disclosure": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.",
+        "generation_adapter": "default",
+        "backend": "lora",
+        "rag": true,
+        "status": "hypothetical_generated",
+        "policy_reason": null,
+        "extrapolation": true,
+        "response_mode": "hypothetical",
+        "direct_retrieved": [
+          "N04",
+          "C03"
+        ],
+        "principles": [
+          {
+            "note_id": "C03",
+            "summary": "Use relevant competence and institutional integrity rather than personal connections."
+          },
+          {
+            "note_id": "N03",
+            "summary": "Preserve buffers and take a long view when managing resources and uncertainty."
+          }
+        ],
+        "premise_correction": "",
+        "correction_source": null,
+        "retrieved": [
+          "C03",
+          "N03"
+        ],
+        "references": [
+          {
+            "note_id": "C03",
+            "source_id": "S03",
+            "title": "MM Lee Kuan Yew at Tanjong Pagar National Day Celebrations 2010",
+            "publisher": "PMO",
+            "event_date": "2010-08-15",
+            "page_date": "2010-08-15",
+            "url": "https://www.pmo.gov.sg/newsroom/speech-mm-lee-kuan-yew-tanjong-pagar-national-day-celebrations-tanjong-pagar-community/",
+            "locator": "passages on basic values, NEWater and policy revision",
+            "split": "train",
+            "author": "Lee Kuan Yew",
+            "accessed": "2026-11-06",
+            "source_type": "primary_speech",
+            "rights": "Third-party source; no source-text redistribution license asserted.",
+            "date_note": ""
+          },
+          {
+            "note_id": "N03",
+            "source_id": "S02",
+            "title": "MM Lee Kuan Yew at the GIC 30th Anniversary Dinner",
+            "publisher": "PMO",
+            "event_date": "2011-05-09",
+            "page_date": "2011-05-09",
+            "url": "https://www.pmo.gov.sg/newsroom/speech-minister-mentor-lee-kuan-yew-gic-30th-anniversary-dinner-9-may-2011-shangri-la/",
+            "locator": "passages on reserves, talent and calculated investment risks",
+            "split": "train",
+            "author": "Lee Kuan Yew",
+            "accessed": "2026-11-06",
+            "source_type": "primary_speech",
+            "rights": "Third-party source; no source-text redistribution license asserted.",
+            "date_note": ""
+          }
+        ],
+        "raw_generation": "[No precedent is available.]  \nIn the same 2010 address, Lee linked capable institutions with leadership integrity, appointment on merit rather than personal connections, and equal opportunity across race, language and religion.  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent is available.]  \n[No precedent",
+        "citation_fallback": false,
+        "latency_seconds": 18.486
+      },
+      "checks": {
+        "mode_matches": true,
+        "abstention_matches": true,
+        "correction_matches": true,
+        "interpretation_label_present": true
+      },
+      "three_parts_present": false,
+      "raw_precedent_ids_valid": false,
+      "labelled_precedent_retrieved": true,
+      "raw_refusal_pattern": false,
+      "raw_speech_fabrication_pattern": false
+    },
+    {
+      "case": {
+        "id": "economic-crisis",
+        "question": "What would Lee consider if a severe recession threatens essential services?",
+        "expected_mode": "hypothetical",
+        "expected_abstain": false,
+        "expected_correction": false,
+        "relevant_precedent": "N03"
+      },
+      "result": {
+        "runtime_policy": "v3",
+        "question": "What would Lee consider if a severe recession threatens essential services?",
+        "answer": "Hypothetical interpretation / extrapolation, not a documented view of Lee Kuan Yew.\n\nHistorical precedent (source notes): Lee described national reserves as protection during downturns, support for confidence and a contributor to public revenue; GIC should invest with a long horizon. [N03]\n\nPossible application (LLM-generated): [No precedent is available.]  \nIn a severe recession, I would recommend investing in long-term infrastructure projects such as national reserves and GICs. This will provide essential services while also generating revenue and supporting confidence. The investment horizon should be extended to ensure long-term sustainability.\n\nLimit: An analogy identifies a possible approach, not proof of Lee's opinion. Differences in the new situation and relevant expertise still matter.\n\nHistorical basis (supports the principles, not this hypothetical conclusion):\n- Preserve buffers and take a long view when managing resources and uncertainty. [N03]",
+        "disclosure": "Historical simulation; generated text is not an authentic Lee Kuan Yew quotation.",
+        "generation_adapter": "default",
+        "backend": "lora",
+        "rag": true,
+        "status": "hypothetical_generated",
+        "policy_reason": null,
+        "extrapolation": true,
+        "response_mode": "hypothetical",
+        "direct_retrieved": [
+          "N02",
+          "N07",
+          "N16"
+        ],
+        "principles": [
+          {
+            "note_id": "N03",
+            "summary": "Preserve buffers and take a long view when managing resources and uncertainty."
+          }
+        ],
+        "premise_correction": "",
+        "correction_source": null,
+        "retrieved": [
+          "N03"
+        ],
+        "references": [
+          {
+            "note_id": "N03",
+            "source_id": "S02",
+            "title": "MM Lee Kuan Yew at the GIC 30th Anniversary Dinner",
+            "publisher": "PMO",
+            "event_date": "2011-05-09",
+            "page_date": "2011-05-09",
+            "url": "https://www.pmo.gov.sg/newsroom/speech-minister-mentor-lee-kuan-yew-gic-30th-anniversary-dinner-9-may-2011-shangri-la/",
+            "locator": "passages on reserves, talent and calculated investment risks",
+            "split": "train",
+            "author": "Lee Kuan Yew",
+            "accessed": "2026-11-06",
+            "source_type": "primary_speech",
+            "rights": "Third-party source; no source-text redistribution license asserted.",
+            "date_note": ""
+          }
+        ],
+        "raw_generation": "[No precedent is available.]  \nIn a severe recession, I would recommend investing in long-term infrastructure projects such as national reserves and GICs. This will provide essential services while also generating revenue and supporting confidence. The investment horizon should be extended to ensure long-term sustainability.",
+        "citation_fallback": false,
+        "latency_seconds": 6.759
+      },
+      "checks": {
+        "mode_matches": true,
+        "abstention_matches": true,
+        "correction_matches": true,
+        "interpretation_label_present": true
+      },
+      "three_parts_present": false,
+      "raw_precedent_ids_valid": false,
+      "labelled_precedent_retrieved": true,
+      "raw_refusal_pattern": false,
+      "raw_speech_fabrication_pattern": false
+    }
+  ],
+  "display_postprocessing": "Factual precedents rendered from source notes; Application extracted from the recorded raw model answer. No raw generation or metric was changed."
+}

@@ -1,5 +1,23 @@
 # Dataset, provenance and source selection
 
+## Current behavior extension
+
+The original files below remain preserved for the factual experiment. The current
+system adds `behavior_*` and `extended_*` files: ten total source records,
+21 notes, fourteen annotated event/action cases and 56 unique behavior examples.
+`data/router_train.jsonl` contains 48 labelled intent examples. See
+[BEHAVIOR.md](BEHAVIOR.md) for scope, training and the distinction between
+observed actions, inferred principles and hypothetical applications.
+The [research coverage map](RESEARCH_COVERAGE.md) separates trained themes from
+additional inspected resources and unfilled research gaps.
+
+Two sources were added: [NLB's Bukit Ho Swee fire article](https://www.nlb.gov.sg/main/article-detail?cmsuuid=8a0ca033-7b44-47a1-b4cd-f841debdf6db)
+(institutional secondary history) and [Lee's 13 May 2011 NTUC speech](https://www.nas.gov.sg/archivesonline/data/pdfdoc/lky20110513.pdf)
+(primary speech). Additional leadership and succession notes come from the
+already registered 2010 National Day celebrations speech. The original factual
+and new behavior data have separate manifests; the old counts describe the
+original files, not the entire expanded corpus.
+
 This project builds a **new, small, AI-assisted starter dataset** from research
 on official sources. It does not claim to have downloaded an official,
 comprehensive Lee Kuan Yew training dataset. All sources below were inspected
