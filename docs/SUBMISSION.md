@@ -42,6 +42,7 @@ and arbitrary topics remains limited by the starter corpus.
 ## Repository / Workflow Links
 
 - Public repository: https://github.com/DiedrickD/99group-3
+- Temporary live trained-model chat: https://3baba5f3e0cf4f2513.gradio.live (requires the local server to remain running)
 - Executed chat examples: https://github.com/DiedrickD/99group-3/blob/main/docs/CHAT_EXAMPLES.md
 - Dataset and source list: https://github.com/DiedrickD/99group-3/blob/main/docs/DATASET.md
 - Workflow: https://github.com/DiedrickD/99group-3/blob/main/docs/WORKFLOW.md

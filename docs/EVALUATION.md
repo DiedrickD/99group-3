@@ -72,3 +72,11 @@ substantial improvement over this starter.
 No RAGAS, DeepEval or external LLM judge scores are claimed. Automated citation
 checks and small source-held-out loss measurements cannot substitute for that
 review.
+
+## Verification status on 6 November 2026
+
+Local source/data validation, six grounding tests, artifact lineage checks,
+notebook syntax checks and real local/public Gradio chat requests passed.
+The published GitHub Actions job could not start because of an account
+restriction; no CI pass is claimed. Its first run is
+[recorded here](https://github.com/DiedrickD/99group-3/actions/runs/42238891198).

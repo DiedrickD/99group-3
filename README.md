@@ -9,6 +9,9 @@ Replies are generated reconstructions, never authentic Lee Kuan Yew quotations.
 [Evaluation](docs/EVALUATION.md) ·
 [Open training notebook in Colab](https://colab.research.google.com/github/DiedrickD/99group-3/blob/main/notebooks/train_colab.ipynb)
 
+[Temporary live trained-model chat](https://3baba5f3e0cf4f2513.gradio.live)
+([availability and verification](docs/DEMO.md)).
+
 The local deliverable folder is named `99task_lee_kuan_yew_llm`; its contents are
 the root of this repository. Internal research is maintained separately and is
 not pushed.
