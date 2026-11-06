@@ -1,0 +1,7 @@
+# The notes backend, retrieval and evaluation use only Python's standard library.
+# Install this file for local language-model inference and LoRA training.
+torch==2.6.0
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.6.0
+safetensors==0.5.3

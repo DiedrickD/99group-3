@@ -1,0 +1,51 @@
+{
+  "completed_utc": "2026-11-06T14:40:50.266796+00:00",
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "apache-2.0",
+    "model_card": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "resolved_date": "2026-11-06",
+    "local_directory": "models/base/Qwen--Qwen2.5-0.5B-Instruct"
+  },
+  "device": "cpu",
+  "torch_version": "2.6.0+cpu",
+  "seed": 42,
+  "epochs": 2,
+  "optimizer_steps": 14,
+  "learning_rate": 0.0002,
+  "micro_batch_size": 1,
+  "gradient_accumulation": 4,
+  "max_length": 384,
+  "lora": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "trainable_parameters": 540672,
+  "total_parameters_including_adapter": 494573440,
+  "train_examples": 28,
+  "validation_examples": 4,
+  "training_data_sha256": "1a82bcb067bb9e4f686eef83acf76af897163486d84529ed3a8e99e67fd2116a",
+  "validation_data_sha256": "8fd7bd3ddcf98ddd530218a3d2e162a86de9a1c92158d88c4109929b48d9a6c5",
+  "validation_loss_before": 3.2399501986801624,
+  "validation_loss_after": 2.4603213518857956,
+  "elapsed_seconds": 385.79,
+  "epochs_log": [
+    {
+      "epoch": 1,
+      "mean_example_training_loss": 2.793413268668311,
+      "validation_token_loss": 2.674372386187315
+    },
+    {
+      "epoch": 2,
+      "mean_example_training_loss": 2.4336067863873074,
+      "validation_token_loss": 2.4603213518857956
+    }
+  ],
+  "interpretation": "Small feasibility experiment. Loss does not establish historical accuracy, persona quality, or improvement in chatbot answers."
+}

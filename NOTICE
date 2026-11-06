@@ -1,0 +1,17 @@
+This is an independent educational historical simulation. It is not affiliated
+with Lee Kuan Yew's estate, the Government of Singapore, PMO, MFA, NAS, NLB,
+Qwen, Alibaba, Google, Hugging Face or Gradio.
+
+Base model: Qwen/Qwen2.5-0.5B-Instruct
+Publisher: Qwen
+Model card: https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct
+License: Apache License 2.0. The base weights are downloaded separately.
+Exact source revision: config/model.json.
+
+The adapter in models/lky-lora is a modified-model artifact produced by the
+project's LoRA training. It is distributed under Apache License 2.0; see
+docs/licenses/QWEN_LICENSE.txt and the recorded training metadata.
+Source speeches remain subject to their respective owners' rights.
+
+Original code and documentation are under the repository MIT license except
+where a separate data or model license is identified.

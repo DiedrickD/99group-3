@@ -1,0 +1,13 @@
+{
+  "adapter_file": "models/lky-lora/adapter_model.safetensors",
+  "sha256": "2c8a10299dd76c797e3521ff361e9df5ade0b672bac43b921626480eaca99ecb",
+  "base_model": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "apache-2.0",
+    "model_card": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "resolved_date": "2026-11-06",
+    "local_directory": "models/base/Qwen--Qwen2.5-0.5B-Instruct"
+  },
+  "training_data_sha256": "1a82bcb067bb9e4f686eef83acf76af897163486d84529ed3a8e99e67fd2116a"
+}

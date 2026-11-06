@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve the exact dataset bytes used by the recorded training run.
+data/*.jsonl -text whitespace=cr-at-eol
+*.safetensors -text

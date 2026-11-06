@@ -1,0 +1,29 @@
+{
+  "created": "2026-11-06",
+  "sources": 8,
+  "notes": 16,
+  "train_examples": 28,
+  "validation_examples": 4,
+  "eval_examples": 22,
+  "training_sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06"
+  ],
+  "validation_sources": [
+    "S07"
+  ],
+  "held_out_training_sources": [
+    "S08"
+  ],
+  "sha256": {
+    "sources.jsonl": "720fd83c049317af4dacfb7f8a8269e67bcf36a5e1a4abf7b3b474bef52dae84",
+    "notes.jsonl": "7663016d79b296bc1ec529895294c375af70622b7d5cbd576c1d005017a1c870",
+    "train.jsonl": "1a82bcb067bb9e4f686eef83acf76af897163486d84529ed3a8e99e67fd2116a",
+    "validation.jsonl": "8fd7bd3ddcf98ddd530218a3d2e162a86de9a1c92158d88c4109929b48d9a6c5",
+    "eval.jsonl": "e0c906fca82a654b32d1e91cca90fe42144a73ec429a4ef0fdfa15997321fe19"
+  }
+}
